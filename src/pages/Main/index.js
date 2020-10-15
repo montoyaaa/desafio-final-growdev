@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Title } from './styles';
+import NavMenuLogin from '../../components/NavMenuLogin';
 
 function Main() {
-    return <Title>Hellow Growdevers</Title>;
+    return <NavMenuLogin />;
 }
 
 export default Main;
