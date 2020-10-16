@@ -26,7 +26,7 @@ export default function ClassesAdmin() {
 
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a className="dropdown-item" href="/lessons">Gerencie suas Aulas</a>
-                            <a className="dropdown-item" href="#">Gerencie suas Turmas</a>
+                            <a className="dropdown-item" href="/classes">Gerencie suas Turmas</a>
                         </div>
                     </div>
                 </div>
