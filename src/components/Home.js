@@ -16,9 +16,6 @@ export default function Home() {
                 <img src={imageBg}></img>
             </div>
         </div>
-        <footer id="home-footer" className="d-flex flex-row align-items-center justify-content-center">
-            <h2 className="p-3 m-0 mb-1">Já São Mais de <span>X</span> Aulas Cadastradas!</h2>
-        </footer>
     </>
     );
 }

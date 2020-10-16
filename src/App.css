@@ -44,6 +44,10 @@ button {
 .btn-outline-primary {
     background-color: #2b385b;
     border-color: #2b385b;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 #logo-dark {
@@ -139,4 +143,52 @@ button {
     font-size: 12px;
     color: #fff;
     text-transform: uppercase;
+}
+
+.new-button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-button h1 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.new-button button {
+    height: 200px;
+    width: 200px;
+    color: #fff;
+    background-color: #212126;
+    border: solid 3px #2b385b;
+}
+
+.new-button button i {
+    font-size: 60px;
+}
+
+.dropdown i {
+    color: #e16e0e;
+    font-size: 100px;
+    transition: 0.3s;
+}
+.dropdown i:hover {
+    color: #2b385b;
+    transition: 0.3s;
+}
+
+.container-3 img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+    width: 50%;
+}
+
+#table {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+table thead {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    border: solid 1px #e16e0e;
 }

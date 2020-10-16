@@ -1,19 +1,19 @@
 import React from 'react';
 
 import NavMenu from '../../components/NavMenu';
-import Home from '../../components/Home';
+import ClassesAdmin from '../../components/ClassesAdmin';
 import Footer from '../../components/FooterCount'
 
-function Main() {
+function PanelControl() {
     return (
-        <>
+    <>
             <div className="d-flex flex-column">
                 <NavMenu />
-                <Home />
+                <ClassesAdmin />
                 <Footer />
             </div>
         </>
-    );
+        )
 }
 
-export default Main;
+export default PanelControl;
