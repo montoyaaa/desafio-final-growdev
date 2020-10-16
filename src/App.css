@@ -98,3 +98,45 @@ button {
     text-transform: uppercase;
     border-bottom: solid 1px #e16e0e;
 }
+
+#login-form {
+    color: #e16e0e;
+    transform: translateY(50%);
+    width: 300px;
+    height: 230px;
+    padding-top: 14px;
+    background-color: rgba(255, 255, 255, 0.021);
+    font-family: 'Roboto', sans-serif;
+}
+
+#login-form input {
+    background-color: #212126;
+}
+#login-form button,
+#login-form a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#register-form {
+    color: #e16e0e;
+    transform: translateY(50%);
+    width: 300px;
+    height: 365px;
+    padding-top: 14px;
+    background-color: rgba(255, 255, 255, 0.021);
+    font-family: 'Roboto', sans-serif;
+}
+
+#register-form input {
+    background-color: #212126;
+}
+#register-form button,
+#register-form a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import image from '../img/logo-dark.png'
 
-export default function NavMenuLogin() {
+export default function NavMenu() {
     return (
         <header className="navbar-container d-flex align-items-center justify-content-between">
                 <a href="/">
@@ -13,7 +13,7 @@ export default function NavMenuLogin() {
                 <a href="/" className="m-3 p-3">Aulas</a>
                 <a href="/" className="m-3 p-3">Alunos</a>
             </nav>
-                <a href="/" id="btn-login" className="m-3 btn btn-outline-primary">Login</a>
+                <a href="/login" className="m-3 btn btn-outline-primary">Login</a>
         </header>
     );
 }

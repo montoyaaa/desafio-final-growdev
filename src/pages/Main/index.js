@@ -1,13 +1,13 @@
 import React from 'react';
 
-import NavMenuLogin from '../../components/NavMenuLogin';
+import NavMenu from '../../components/NavMenu';
 import Home from '../../components/Home';
 
 function Main() {
     return (
         <>
             <div className="d-flex flex-column">
-                <NavMenuLogin />
+                <NavMenu />
                 <Home />
             </div>
         </>
