@@ -19,10 +19,16 @@ export default function Routes() {
                 <Route path="/" exact component={Main} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
-                <Route path="/classes-manager" component={AdminPanelControlClasses} />
+                <Route
+                    path="/classes-manager"
+                    component={AdminPanelControlClasses}
+                />
                 <Route path="/lessons" component={Lessons} />
                 <Route path="/classes" component={Classes} />
-                <Route path="/student-manager" component={AdminStudentControl} />
+                <Route
+                    path="/student-manager"
+                    component={AdminStudentControl}
+                />
                 <Route path="/students" component={Students} />
             </Switch>
         </BrowserRouter>

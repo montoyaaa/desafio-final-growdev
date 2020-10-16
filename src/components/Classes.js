@@ -1,10 +1,13 @@
 import React from 'react';
 
-import TableItem from './ClassesTableItem'
+import TableItem from './ClassesTableItem';
 
 export default function Classes() {
     return (
-        <div id="table" className="d-flex flex-column w-50 align-self-center pt-5 pb-5">
+        <div
+            id="table"
+            className="d-flex flex-column w-50 align-self-center pt-5 pb-5"
+        >
             <h2>Suas Turmas</h2>
             <table className="table table-striped m-0 p-0">
                 <thead className="thead-dark">
@@ -16,7 +19,7 @@ export default function Classes() {
                     </tr>
                 </thead>
                 <tbody>
-        	        <TableItem />
+                    <TableItem />
                 </tbody>
             </table>
         </div>

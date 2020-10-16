@@ -2,7 +2,7 @@ import React from 'react';
 
 import NavMenu from '../../components/NavMenu';
 import Students from '../../components/Students';
-import Footer from '../../components/FooterCount'
+import Footer from '../../components/FooterCount';
 
 function StudentList() {
     return (
@@ -13,7 +13,7 @@ function StudentList() {
                 <Footer />
             </div>
         </>
-        )
+    );
 }
 
 export default StudentList;

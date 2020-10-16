@@ -2,7 +2,7 @@ import React from 'react';
 
 import NavMenu from '../../components/NavMenu';
 import Home from '../../components/Home';
-import Footer from '../../components/FooterCount'
+import Footer from '../../components/FooterCount';
 
 function Main() {
     return (

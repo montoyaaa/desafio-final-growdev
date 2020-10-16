@@ -2,7 +2,7 @@ import React from 'react';
 
 import NavMenu from '../../components/NavMenu';
 import Classes from '../../components/Classes';
-import Footer from '../../components/FooterCount'
+import Footer from '../../components/FooterCount';
 
 function ClassesList() {
     return (
@@ -13,7 +13,7 @@ function ClassesList() {
                 <Footer />
             </div>
         </>
-        )
+    );
 }
 
 export default ClassesList;
