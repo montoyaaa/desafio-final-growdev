@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BtnLogin from '../components/ButtonLogin'
 import image from '../img/logo-dark.png'
 
 export default function NavMenu() {
@@ -13,7 +14,7 @@ export default function NavMenu() {
                 <a href="/classes-manager" className="m-3 p-3">Aulas</a>
                 <a href="/student-manager" className="m-3 p-3">Alunos</a>
             </nav>
-                <a href="/login" className="m-3 btn btn-outline-primary">Login</a>
+                <BtnLogin />
         </header>
     );
 }
