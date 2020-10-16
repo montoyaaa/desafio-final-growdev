@@ -11,7 +11,7 @@ export default function NavMenu() {
             <nav className="">
                 <a href="/" className="m-3 p-3">Home</a>
                 <a href="/classes-manager" className="m-3 p-3">Aulas</a>
-                <a href="/" className="m-3 p-3">Alunos</a>
+                <a href="/student-manager" className="m-3 p-3">Alunos</a>
             </nav>
                 <a href="/login" className="m-3 btn btn-outline-primary">Login</a>
         </header>

@@ -192,3 +192,7 @@ table thead {
     text-transform: uppercase;
     border: solid 1px #e16e0e;
 }
+
+#student-panel {
+    height: 596px;
+}
