@@ -1,4 +1,5 @@
 import React from 'react';
+
 import image from '../img/logo-dark.png'
 
 export default function NavMenuLogin() {
