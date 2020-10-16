@@ -1,14 +1,14 @@
 import React from 'react';
 
 import NavMenuLogin from '../../components/NavMenuLogin';
-import Welcome from '../../components/Welcome';
+import Home from '../../components/Home';
 
 function Main() {
     return (
         <>
             <div className="d-flex flex-column">
                 <NavMenuLogin />
-                <Welcome />
+                <Home />
             </div>
         </>
     );

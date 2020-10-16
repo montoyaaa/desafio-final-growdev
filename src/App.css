@@ -50,15 +50,17 @@ button {
     width: 90px;
 }
 
-.welcomeMessage {
-    width: 100%;
-    position: relative;
+#container-home {
+    background-color: red;
 }
 
-.welcomeMessage h1 {
-    position: relative;
-    text-align: center;
-    color: #e16e0e;
-    text-transform: uppercase;
-    font-family: 'Roboto Condensed', sans-serif;
-}
+/* .welcomeMessage {
+    background-image: url(./img/track.webp);
+    position: absolute;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2b385b;
+    max-width: 300px;
+    top: 30%;
+    left: 20%;
+} */

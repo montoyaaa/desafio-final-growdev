@@ -8,9 +8,9 @@ export default function NavMenuLogin() {
                     <img id="logo-dark" className="pl-1" src={image}></img>
                 </a>
             <nav className="">
-                <a href="/" className="m-3">Home</a>
-                <a href="/" className="m-3">Aulas</a>
-                <a href="/" className="m-3">Alunos</a>
+                <a href="/" className="m-3 p-3">Home</a>
+                <a href="/" className="m-3 p-3">Aulas</a>
+                <a href="/" className="m-3 p-3">Alunos</a>
             </nav>
                 <a href="/" id="btn-login" className="m-3 btn btn-outline-primary">Login</a>
         </header>
