@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +14,7 @@ body,
 }
 
 body {
-    background: #2b385b;
+    background: #212126;
     -webkit-font-smoothing: antialiased !important;
 }
 
@@ -27,9 +29,36 @@ button {
     cursor: pointer;
 }
 
-.navBar {
-    background-image: url('./img/navBg.jpg');
-    width: 300px;
-    height: 100%;
-    position: fixed;
+.navbar-container a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    color: #c0c0c2;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 26px;
+}
+.navbar-container nav a:hover {
+    color: #e16e0e;
+}
+
+.btn-outline-primary {
+    background-color: #2b385b;
+    border-color: #2b385b;
+}
+
+#logo-dark {
+    width: 90px;
+}
+
+.welcomeMessage {
+    width: 100%;
+    position: relative;
+}
+
+.welcomeMessage h1 {
+    position: relative;
+    text-align: center;
+    color: #e16e0e;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
 }
