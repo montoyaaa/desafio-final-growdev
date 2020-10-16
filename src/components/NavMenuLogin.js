@@ -6,7 +6,7 @@ export default function NavMenuLogin() {
     return (
         <header className="navbar-container d-flex align-items-center justify-content-between">
                 <a href="/">
-                    <img id="logo-dark" className="pl-1" src={image}></img>
+                    <img alt="logo Growdev" id="logo-dark" className="pl-1" src={image}></img>
                 </a>
             <nav className="">
                 <a href="/" className="m-3 p-3">Home</a>
