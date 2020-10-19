@@ -11,6 +11,9 @@ import Lessons from './pages/LessonsList';
 import Classes from './pages/ClassesList';
 import AdminStudentControl from './pages/AdminStudentControl';
 import Students from './pages/StudentList';
+import ClassRegistration from './pages/ClassRegistration';
+import LessonRegistration from './pages/LessonRegistration';
+import StudentRegistration from './pages/StudentRegistration';
 
 export default function Routes() {
     return (
@@ -30,6 +33,9 @@ export default function Routes() {
                     component={AdminStudentControl}
                 />
                 <Route path="/students" component={Students} />
+                <Route path="/class-reg" component={ClassRegistration} />
+                <Route path="/student-reg" component={StudentRegistration} />
+                <Route path="/lesson-reg" component={LessonRegistration} />
             </Switch>
         </BrowserRouter>
     );

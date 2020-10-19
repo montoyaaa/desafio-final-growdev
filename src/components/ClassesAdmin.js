@@ -8,16 +8,20 @@ export default function ClassesAdmin() {
             <div className="d-flex flex-column align-items-center w-50">
                 <div className="d-flex align-items-start flex-column new-button pt-5">
                     <h1>Nova Aula</h1>
-                    <button className="btn btn-outline-primary">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="/lesson-reg">
+                        <button className="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
 
                 <div className="d-flex align-items-start flex-column new-button pt-5">
                     <h1>Nova Turma</h1>
-                    <button className="btn btn-outline-primary">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="/class-reg">
+                        <button className="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
 

@@ -196,3 +196,8 @@ table thead {
 #student-panel {
     height: 596px;
 }
+
+.formReg input,
+.formReg select {
+    background-color: #212126;
+}

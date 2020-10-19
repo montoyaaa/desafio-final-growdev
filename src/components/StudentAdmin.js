@@ -11,9 +11,11 @@ export default function StudentAdmin() {
             >
                 <div className="d-flex align-items-start flex-column new-button pt-5">
                     <h1>Novo Aluno</h1>
-                    <button className="btn btn-outline-primary">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    <a href="/student-reg">
+                        <button className="btn btn-outline-primary">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
 
