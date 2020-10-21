@@ -12,14 +12,6 @@ export default function ClassRegistrationForm() {
                 />
             </div>
             <div className="form-group">
-                <label for="exampleInputEmail1">Código da Turma:</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Ex. REACT01"
-                />
-            </div>
-            <div className="form-group">
                 <label for="exampleCheck1">Período:</label>
                 <select className="form-control">
                     <option>Escolha um</option>

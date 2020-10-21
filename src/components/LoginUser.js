@@ -27,13 +27,6 @@ export default function LoginUser() {
                     />
                 </div>
                 <div className="d-flex flex-row row w-100 m-0">
-                    <a
-                        href="/register"
-                        type="submit"
-                        className="btn btn-secondary col"
-                    >
-                        Criar Conta
-                    </a>
                     <button
                         type="submit"
                         className="btn btn-primary btn-outline-primary col"

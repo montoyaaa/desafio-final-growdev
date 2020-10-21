@@ -12,6 +12,14 @@ export default function StudentRegistrationForm() {
                 />
             </div>
             <div className="form-group">
+                <label for="exampleInputEmail1">Email do Aluno:</label>
+                <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Insira o Email do Aluno"
+                />
+            </div>
+            <div className="form-group">
                 <label for="exampleInputEmail1">Senha do Aluno:</label>
                 <input
                     type="text"

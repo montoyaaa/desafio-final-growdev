@@ -6,7 +6,6 @@ import './App.css';
 import Main from './pages/Main';
 import AdminPanelControlClasses from './pages/AdminPanelControlClasses';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import Lessons from './pages/LessonsList';
 import Classes from './pages/ClassesList';
 import AdminStudentControl from './pages/AdminStudentControl';
@@ -21,7 +20,6 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact component={Main} />
                 <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
                 <Route
                     path="/classes-manager"
                     component={AdminPanelControlClasses}
