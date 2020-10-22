@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import StudentTableItem from './StudentTableItem';
 import AdminTableItem from './AdminTableItem';
 
+const studentsData = [];
+
+const adminsData = [];
+
 export default function Student() {
+    const [students, setStudents] = useState(studentsData);
+
+    const [admins, setAdmins] = useState(adminsData);
+
     return (
         <div
             id="table"
@@ -19,7 +27,9 @@ export default function Student() {
                     </tr>
                 </thead>
                 <tbody>
-                    <AdminTableItem />
+                    {admins.map((admin) => (
+                        <AdminTableItem />
+                    ))}
                 </tbody>
             </table>
             <h2 className="mt-5">Seus Colegas</h2>
@@ -32,7 +42,9 @@ export default function Student() {
                     </tr>
                 </thead>
                 <tbody>
-                    <StudentTableItem />
+                    {students.map((student) => (
+                        <StudentTableItem />
+                    ))}
                 </tbody>
             </table>
         </div>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import TableItem from './ClassesTableItem';
 
+const classesData = [];
+
 export default function Classes() {
+    const [classes, setClasses] = useState(classesData);
+
     return (
         <div
             id="table"
@@ -19,7 +23,9 @@ export default function Classes() {
                     </tr>
                 </thead>
                 <tbody>
-                    <TableItem />
+                    {classes.map((classes) => (
+                        <TableItem />
+                    ))}
                 </tbody>
             </table>
         </div>

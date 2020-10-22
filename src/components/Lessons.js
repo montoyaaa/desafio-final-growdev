@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import TableItem from './TableItem';
 
+const lessonsData = [];
+
 export default function Lessons() {
+    const [lessons, setLessons] = useState(lessonsData);
+
     return (
         <div
             id="table"
@@ -20,7 +24,9 @@ export default function Lessons() {
                     </tr>
                 </thead>
                 <tbody>
-                    <TableItem />
+                    {lessons.map((admin) => (
+                        <TableItem />
+                    ))}
                 </tbody>
             </table>
         </div>

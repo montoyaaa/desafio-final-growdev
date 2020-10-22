@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import SelectClassItem from './SelectClassItem';
 
-const studentsData = [];
-
 export default function StudentRegistrationForm() {
     const initialFormState = {
         id: null,
@@ -14,8 +12,6 @@ export default function StudentRegistrationForm() {
         class: '',
     };
 
-    const [students, setStudents] = useState(studentsData);
-
     const [student, setStudent] = useState(initialFormState);
 
     const handleInputChange = (event) => {
@@ -24,8 +20,6 @@ export default function StudentRegistrationForm() {
     };
 
     const addStudent = (newStudent) => {
-        setStudents([...students, studentsData]);
-
         alert('Novo aluno adicionado!');
     };
 
@@ -98,7 +92,6 @@ export default function StudentRegistrationForm() {
                     event.preventDefault();
 
                     addStudent(student);
-                    console.log(studentsData);
                     console.log(student);
 
                     setStudent(initialFormState);

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import SelectClassItem from './SelectClassItem';
 
-const lessonsData = [];
-
 export default function LessonRegistrationForm() {
     const initialFormState = {
         id: null,
@@ -15,8 +13,6 @@ export default function LessonRegistrationForm() {
         class: '',
     };
 
-    const [lessons, setLessons] = useState(lessonsData);
-
     const [lesson, setLesson] = useState(initialFormState);
 
     const handleInputChange = (event) => {
@@ -25,15 +21,13 @@ export default function LessonRegistrationForm() {
     };
 
     const addLesson = (newLesson) => {
-        setLessons([...lessons, lessonsData]);
-
         alert('Nova aula adicionada!');
     };
 
     return (
         <form className="w-50 align-self-center text-white formReg">
             <div className="form-group">
-                <label for="exampleInputEmail1">Nome da Aula:</label>
+                <label htmlFor="exampleInputEmail1">Nome da Aula:</label>
                 <input
                     type="text"
                     value={lesson.name}
@@ -44,7 +38,7 @@ export default function LessonRegistrationForm() {
                 />
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Dia:</label>
+                <label htmlFor="exampleCheck1">Dia:</label>
                 <select
                     value={lesson.day}
                     name="day"
@@ -86,7 +80,7 @@ export default function LessonRegistrationForm() {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Mês:</label>
+                <label htmlFor="exampleCheck1">Mês:</label>
                 <select
                     value={lesson.month}
                     name="month"
@@ -109,7 +103,7 @@ export default function LessonRegistrationForm() {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Hora:</label>
+                <label htmlFor="exampleCheck1">Hora:</label>
                 <select
                     value={lesson.hour}
                     name="hour"
@@ -138,7 +132,7 @@ export default function LessonRegistrationForm() {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Número de Vagas:</label>
+                <label htmlFor="exampleCheck1">Número de Vagas:</label>
                 <select
                     value={lesson.entries}
                     name="entries"
@@ -159,7 +153,7 @@ export default function LessonRegistrationForm() {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">
+                <label htmlFor="exampleCheck1">
                     Escolha as turmas que terão acesso à aula:
                 </label>
                 <select

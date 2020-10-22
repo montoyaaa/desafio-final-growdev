@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 
-const usersData = [];
-
 export default function LoginUser() {
     const initialFormState = {
         token: null,
         email: '',
         password: '',
     };
-
-    const [users, setUsers] = useState(usersData);
 
     const [user, setUser] = useState(initialFormState);
 
@@ -18,9 +14,7 @@ export default function LoginUser() {
         setUser({ ...user, [name]: value });
     };
 
-    const addUser = (newUser) => {
-        setUsers([...users, usersData]);
-    };
+    const loginUser = (newUser) => {};
 
     return (
         <div
@@ -58,7 +52,7 @@ export default function LoginUser() {
                         onClick={(event) => {
                             event.preventDefault();
 
-                            addUser(user);
+                            loginUser(user);
 
                             console.log(user);
 

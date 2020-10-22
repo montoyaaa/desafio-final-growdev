@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import SelectClassItem from './SelectClassItem';
 
-const classData = [];
-
 export default function ClassRegistrationForm() {
     const initialFormState = {
         id: null,
@@ -11,8 +9,6 @@ export default function ClassRegistrationForm() {
         shift: '',
         entries: '',
     };
-
-    const [classes, setClasses] = useState(classData);
 
     const [class1, setClass] = useState(initialFormState);
 
@@ -22,8 +18,6 @@ export default function ClassRegistrationForm() {
     };
 
     const addClass = (newClass) => {
-        setClasses([...classes, classData]);
-
         alert('Nova turma adicionada!');
     };
 
