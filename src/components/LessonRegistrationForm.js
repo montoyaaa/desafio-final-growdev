@@ -1,19 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import SelectClassItem from './SelectClassItem';
+
+const lessonsData = [];
 
 export default function LessonRegistrationForm() {
+    const initialFormState = {
+        id: null,
+        name: '',
+        day: '',
+        month: '',
+        hour: '',
+        entries: '',
+        class: '',
+    };
+
+    const [lessons, setLessons] = useState(lessonsData);
+
+    const [lesson, setLesson] = useState(initialFormState);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setLesson({ ...lesson, [name]: value });
+    };
+
+    const addLesson = (newLesson) => {
+        setLessons([...lessons, lessonsData]);
+
+        alert('Nova aula adicionada!');
+    };
+
     return (
         <form className="w-50 align-self-center text-white formReg">
             <div className="form-group">
                 <label for="exampleInputEmail1">Nome da Aula:</label>
                 <input
                     type="text"
+                    value={lesson.name}
+                    name="name"
+                    onChange={handleInputChange}
                     className="form-control"
                     placeholder="Ex. Aula de React"
                 />
             </div>
             <div className="form-group">
                 <label for="exampleCheck1">Dia:</label>
-                <select className="form-control">
+                <select
+                    value={lesson.day}
+                    name="day"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha um dia</option>
                     <option>01</option>
                     <option>02</option>
@@ -50,7 +87,12 @@ export default function LessonRegistrationForm() {
             </div>
             <div className="form-group">
                 <label for="exampleCheck1">Mês:</label>
-                <select className="form-control">
+                <select
+                    value={lesson.month}
+                    name="month"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha um mês</option>
                     <option>01</option>
                     <option>02</option>
@@ -68,7 +110,12 @@ export default function LessonRegistrationForm() {
             </div>
             <div className="form-group">
                 <label for="exampleCheck1">Hora:</label>
-                <select className="form-control">
+                <select
+                    value={lesson.hour}
+                    name="hour"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha a hora da aula</option>
 
                     <option>7h</option>
@@ -92,7 +139,12 @@ export default function LessonRegistrationForm() {
             </div>
             <div className="form-group">
                 <label for="exampleCheck1">Número de Vagas:</label>
-                <select className="form-control">
+                <select
+                    value={lesson.entries}
+                    name="entries"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha a quantidade de vagas</option>
                     <option>1</option>
                     <option>2</option>
@@ -106,18 +158,30 @@ export default function LessonRegistrationForm() {
                     <option>10</option>
                 </select>
             </div>
-            <label for="exampleCheck1">
-                Escolha as turmas que terão acesso à aula:
-            </label>
             <div className="form-group">
-                <label for="exampleCheck1">Turma A</label>
-                <input
-                    className="m-1"
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                />
+                <label for="exampleCheck1">
+                    Escolha as turmas que terão acesso à aula:
+                </label>
+                <select
+                    value={lesson.class}
+                    name="class"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
+                    <option>Escolha a turma</option>
+                    <SelectClassItem />
+                </select>
             </div>
             <button
+                onClick={(event) => {
+                    event.preventDefault();
+
+                    addLesson(lesson);
+
+                    console.log(lesson);
+
+                    setLesson(initialFormState);
+                }}
                 type="submit"
                 className="btn btn-primary btn-outline-primary col"
             >

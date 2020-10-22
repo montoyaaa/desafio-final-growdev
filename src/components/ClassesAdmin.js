@@ -10,7 +10,7 @@ export default function ClassesAdmin() {
                     <h1>Nova Aula</h1>
                     <a href="/lesson-reg">
                         <button className="btn btn-outline-primary">
-                            <i class="fas fa-plus"></i>
+                            <i className="fas fa-plus"></i>
                         </button>
                     </a>
                 </div>
@@ -19,7 +19,7 @@ export default function ClassesAdmin() {
                     <h1>Nova Turma</h1>
                     <a href="/class-reg">
                         <button className="btn btn-outline-primary">
-                            <i class="fas fa-plus"></i>
+                            <i className="fas fa-plus"></i>
                         </button>
                     </a>
                 </div>

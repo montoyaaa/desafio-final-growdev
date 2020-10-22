@@ -1,19 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import SelectClassItem from './SelectClassItem';
+
+const classData = [];
 
 export default function ClassRegistrationForm() {
+    const initialFormState = {
+        id: null,
+        class: '',
+        shift: '',
+        entries: '',
+    };
+
+    const [classes, setClasses] = useState(classData);
+
+    const [class1, setClass] = useState(initialFormState);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setClass({ ...class1, [name]: value });
+    };
+
+    const addClass = (newClass) => {
+        setClasses([...classes, classData]);
+
+        alert('Nova turma adicionada!');
+    };
+
     return (
         <form className="w-50 align-self-center text-white formReg">
             <div className="form-group">
-                <label for="exampleInputEmail1">Turma:</label>
+                <label htmlFor="exampleInputEmail1">Turma:</label>
                 <input
+                    value={class1.class}
+                    name="class"
+                    onChange={handleInputChange}
                     type="text"
                     className="form-control"
                     placeholder="Nome da Turma"
                 />
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Período:</label>
-                <select className="form-control">
+                <label htmlFor="exampleCheck1">Período:</label>
+                <select
+                    value={class1.shift}
+                    name="shift"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha um</option>
                     <option>Manhã</option>
                     <option>Tarde</option>
@@ -21,8 +55,13 @@ export default function ClassRegistrationForm() {
                 </select>
             </div>
             <div className="form-group">
-                <label for="exampleCheck1">Número de Vagas:</label>
-                <select className="form-control">
+                <label htmlFor="exampleCheck1">Número de Vagas:</label>
+                <select
+                    value={class1.entries}
+                    name="entries"
+                    onChange={handleInputChange}
+                    className="form-control"
+                >
                     <option>Escolha a quantidade de vagas</option>
                     <option>1</option>
                     <option>2</option>
@@ -39,6 +78,15 @@ export default function ClassRegistrationForm() {
 
             <button
                 type="submit"
+                onClick={(event) => {
+                    event.preventDefault();
+
+                    addClass(class1);
+
+                    console.log(class1);
+
+                    setClass(initialFormState);
+                }}
                 className="btn btn-primary btn-outline-primary col"
             >
                 Enviar
