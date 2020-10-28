@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import SelectClassItem from './SelectClassItem';
+import api from '../Services/api';
+import authHeader from '../Services/auth-header';
 
 export default function ClassRegistrationForm() {
     const initialFormState = {
-        id: null,
-        class: '',
+        name: '',
         shift: '',
         entries: '',
     };
@@ -18,6 +18,9 @@ export default function ClassRegistrationForm() {
     };
 
     const addClass = (newClass) => {
+        api.post('/class-user', class1, {
+            headers: authHeader(),
+        }).then((res) => {});
         alert('Nova turma adicionada!');
     };
 
@@ -26,8 +29,8 @@ export default function ClassRegistrationForm() {
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Turma:</label>
                 <input
-                    value={class1.class}
-                    name="class"
+                    value={class1.name}
+                    name="name"
                     onChange={handleInputChange}
                     type="text"
                     className="form-control"
