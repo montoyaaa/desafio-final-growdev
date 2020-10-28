@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+import AuthenticationService from '../Services/AuthenticationService';
+import StorageProvider from '../Services/StorageProvider';
+import jsonWebTokenService from 'jsonwebtoken';
+
+import api from '../Services/api';
+
 export default function LoginUser() {
     const initialFormState = {
         token: null,
@@ -7,14 +13,41 @@ export default function LoginUser() {
         password: '',
     };
 
-    const [user, setUser] = useState(initialFormState);
-
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value });
     };
 
-    const loginUser = (newUser) => {};
+    const auth = AuthenticationService;
+    const localForage = StorageProvider;
+
+    const saveJwt = async (jwt) => {
+        try {
+            if (jwt) {
+                const decodedJwt = jsonWebTokenService.decode(jwt);
+                await localForage.setItem('jwt_usuario', jwt);
+                await localForage.setItem('dados_usuario', decodedJwt);
+                return true;
+            }
+        } catch (err) {
+            if (err instanceof jsonWebTokenService.JsonWebTokenError) {
+                return false;
+            }
+            throw err;
+        }
+    };
+
+    const [user, setUser] = useState(initialFormState);
+
+    const loginUser = (newUser) => {
+        api.post('/login', user).then((res) => {
+            const jwt = auth.doLogin(newUser.email, newUser.password);
+
+            saveJwt(jwt);
+
+            setUser([...user, res.data]);
+        });
+    };
 
     return (
         <div
