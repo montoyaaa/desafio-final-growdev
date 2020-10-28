@@ -22,6 +22,13 @@ export default function Student() {
 
     const [students, setStudents] = useState(studentsData);
 
+    const deleteUser = (id) => {
+        setStudents(students.filter((user) => user.id !== id));
+        api.delete(`/users/${id}`, {
+            headers: authHeader(),
+        });
+    };
+
     return (
         <div
             id="table"
@@ -38,7 +45,11 @@ export default function Student() {
                 </thead>
                 <tbody>
                     {students.map((student) => (
-                        <StudentTableItem key={student.id} student={student} />
+                        <StudentTableItem
+                            key={student.id}
+                            deleteUser={deleteUser}
+                            student={student}
+                        />
                     ))}
                 </tbody>
             </table>

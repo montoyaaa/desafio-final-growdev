@@ -21,6 +21,13 @@ export default function Lessons() {
 
     const [lessons, setLessons] = useState(lessonsData);
 
+    const deleteLessonUser = (id) => {
+        setLessons(lessons.filter((lesson) => lesson.id !== id));
+        api.delete(`/class/${id}`, {
+            headers: authHeader(),
+        });
+    };
+
     return (
         <div
             id="table"
@@ -39,7 +46,11 @@ export default function Lessons() {
                 </thead>
                 <tbody>
                     {lessons.map((classItem) => (
-                        <TableItem key={classItem.id} classItem={classItem} />
+                        <TableItem
+                            key={classItem.id}
+                            deleteLessonUser={deleteLessonUser}
+                            classItem={classItem}
+                        />
                     ))}
                 </tbody>
             </table>

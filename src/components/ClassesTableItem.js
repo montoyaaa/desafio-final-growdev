@@ -1,19 +1,23 @@
 import React from 'react';
 
-export default function Table(classes) {
+export default function Table(props) {
     return (
         <>
             <tr>
-                <td>{classes.classes.name}</td>
-                <td>{classes.classes.entries}</td>
-                <td>{classes.classes.shift}</td>
+                <td>{props.classes.name}</td>
+                <td>{props.classes.entries}</td>
+                <td>{props.classes.shift}</td>
+                <td>{props.classes.id}</td>
                 <td>
-                    <button
+                    <a
+                        onClick={() => {
+                            props.deleteClassUser(props.classes.id);
+                        }}
                         className="btn btn btn-outline-primary ml-1"
                         type="button"
                     >
                         Excluir
-                    </button>
+                    </a>
                 </td>
             </tr>
         </>

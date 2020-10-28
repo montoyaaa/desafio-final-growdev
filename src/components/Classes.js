@@ -22,6 +22,13 @@ export default function Classes() {
 
     const [classes, setClasses] = useState(classesData);
 
+    const deleteClassUser = (id) => {
+        setClasses(classes.filter((class1) => class1.id !== id));
+        api.delete(`/class-user/${id}`, {
+            headers: authHeader(),
+        });
+    };
+
     return (
         <div
             id="table"
@@ -34,13 +41,20 @@ export default function Classes() {
                         <th scope="col">Turma</th>
                         <th scope="col">Vagas</th>
                         <th scope="col">Período</th>
+                        <th scope="col">Id</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {classes.map((classes) => (
-                        <TableItem key={classes.id} classes={classes} />
-                    ))}
+                    {classes.map((classes) => {
+                        return (
+                            <TableItem
+                                key={classes.id}
+                                deleteClassUser={deleteClassUser}
+                                classes={classes}
+                            />
+                        );
+                    })}
                 </tbody>
             </table>
         </div>
