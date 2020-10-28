@@ -23,13 +23,12 @@ export default function LessonRegistrationForm() {
     const [classes, setClasses] = useState(classesData);
 
     const initialFormState = {
-        id: null,
-        name: '',
+        title: '',
         day: '',
         month: '',
         hour: '',
         entries: '',
-        class: '',
+        class_user_id: '',
     };
 
     const [lesson, setLesson] = useState(initialFormState);
@@ -42,10 +41,8 @@ export default function LessonRegistrationForm() {
     const addLesson = (newLesson) => {
         api.post('/class', lesson, {
             headers: authHeader(),
-        }).then((res) => {
-            setLesson([...lesson, res.data]);
-        });
-
+        }).then((res) => {});
+        console.log(newLesson);
         alert('Nova aula adicionada!');
     };
 
@@ -55,8 +52,8 @@ export default function LessonRegistrationForm() {
                 <label htmlFor="exampleInputEmail1">Nome da Aula:</label>
                 <input
                     type="text"
-                    value={lesson.name}
-                    name="name"
+                    value={lesson.title}
+                    name="title"
                     onChange={handleInputChange}
                     className="form-control"
                     placeholder="Ex. Aula de React"
@@ -182,8 +179,8 @@ export default function LessonRegistrationForm() {
                     Escolha as turmas que terão acesso à aula:
                 </label>
                 <select
-                    value={lesson.class}
-                    name="class"
+                    value={lesson.class_user_id}
+                    name="class_user_id"
                     onChange={handleInputChange}
                     className="form-control"
                 >
@@ -198,8 +195,6 @@ export default function LessonRegistrationForm() {
                     event.preventDefault();
 
                     addLesson(lesson);
-
-                    console.log(lesson);
 
                     setLesson(initialFormState);
                 }}
