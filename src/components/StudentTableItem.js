@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function StudentItemTable() {
+export default function StudentItemTable(student) {
     return (
         <>
             <tr>
-                <td>Ricardo Montoya</td>
-                <td>A</td>
+                <td>{student.student.name}</td>
+                <td>{student.student.email}</td>
                 <td>
                     <button
                         className="btn btn btn-outline-primary ml-1"

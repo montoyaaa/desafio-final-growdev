@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
 
+import api from '../Services/api';
+import authHeader from '../Services/auth-header';
+
 import TableItem from './TableItem';
 
 const lessonsData = [];
 
 export default function Lessons() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    if (!isMounted) {
+        api.get('/class', {
+            headers: authHeader(),
+        }).then((res) => {
+            setLessons(res.data);
+            setIsMounted(true);
+        });
+    }
+
     const [lessons, setLessons] = useState(lessonsData);
 
     return (
@@ -24,8 +38,8 @@ export default function Lessons() {
                     </tr>
                 </thead>
                 <tbody>
-                    {lessons.map((admin) => (
-                        <TableItem />
+                    {lessons.map((classItem) => (
+                        <TableItem key={classItem.id} classItem={classItem} />
                     ))}
                 </tbody>
             </table>

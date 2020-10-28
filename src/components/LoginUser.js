@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 
-import AuthenticationService from '../Services/AuthenticationService';
-import StorageProvider from '../Services/StorageProvider';
-import jsonWebTokenService from 'jsonwebtoken';
+import AuthService from '../Services/auth.service';
 
-import api from '../Services/api';
+import { Link } from 'react-router-dom';
 
 export default function LoginUser() {
+    AuthService.logout();
+
+    const [currentUser, setCurrentUser] = useState(undefined);
+    const [showAdminBoard, setShowAdminBoard] = useState(false);
+
+    function componentDidMount() {
+        const user = AuthService.getCurrentUser();
+
+        if (user) {
+            setCurrentUser(user);
+            setShowAdminBoard(user.roles.includes('is_admin'));
+        }
+    }
+
     const initialFormState = {
-        token: null,
         email: '',
         password: '',
     };
@@ -18,35 +29,12 @@ export default function LoginUser() {
         setUser({ ...user, [name]: value });
     };
 
-    const auth = AuthenticationService;
-    const localForage = StorageProvider;
-
-    const saveJwt = async (jwt) => {
-        try {
-            if (jwt) {
-                const decodedJwt = jsonWebTokenService.decode(jwt);
-                await localForage.setItem('jwt_usuario', jwt);
-                await localForage.setItem('dados_usuario', decodedJwt);
-                return true;
-            }
-        } catch (err) {
-            if (err instanceof jsonWebTokenService.JsonWebTokenError) {
-                return false;
-            }
-            throw err;
-        }
-    };
-
     const [user, setUser] = useState(initialFormState);
 
     const loginUser = (newUser) => {
-        api.post('/login', user).then((res) => {
-            const jwt = auth.doLogin(newUser.email, newUser.password);
-
-            saveJwt(jwt);
-
-            setUser([...user, res.data]);
-        });
+        const email = newUser.email;
+        const password = newUser.password;
+        AuthService.login(email, password).then((header) => {});
     };
 
     return (
@@ -54,6 +42,9 @@ export default function LoginUser() {
             id="login-form"
             className="d-flex justify-content-center align-self-center"
         >
+            {showAdminBoard && <Link to={'/classes-manager'}></Link>}
+
+            {currentUser && <Link to={'/lessons'}></Link>}
             <form className="d-flex flex-column">
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
@@ -86,8 +77,6 @@ export default function LoginUser() {
                             event.preventDefault();
 
                             loginUser(user);
-
-                            console.log(user);
 
                             setUser(initialFormState);
                         }}

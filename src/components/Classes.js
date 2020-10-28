@@ -2,9 +2,24 @@ import React, { useState } from 'react';
 
 import TableItem from './ClassesTableItem';
 
+import api from '../Services/api';
+import authHeader from '../Services/auth-header';
+
 const classesData = [];
 
 export default function Classes() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    if (!isMounted) {
+        api.get('/class-user', {
+            headers: authHeader(),
+        }).then((res) => {
+            setClasses(res.data);
+
+            setIsMounted(true);
+        });
+    }
+
     const [classes, setClasses] = useState(classesData);
 
     return (
@@ -24,7 +39,7 @@ export default function Classes() {
                 </thead>
                 <tbody>
                     {classes.map((classes) => (
-                        <TableItem />
+                        <TableItem key={classes.id} classes={classes} />
                     ))}
                 </tbody>
             </table>

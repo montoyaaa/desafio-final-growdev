@@ -1,19 +1,13 @@
 import React from 'react';
 
-export default function Table() {
+export default function Table(classes) {
     return (
         <>
             <tr>
-                <td>A</td>
-                <td>00/10</td>
-                <td>Tarde</td>
+                <td>{classes.classes.name}</td>
+                <td>{classes.classes.entries}</td>
+                <td>{classes.classes.shift}</td>
                 <td>
-                    <button
-                        className="btn btn btn-outline-primary ml-1"
-                        type="button"
-                    >
-                        Editar
-                    </button>
                     <button
                         className="btn btn btn-outline-primary ml-1"
                         type="button"

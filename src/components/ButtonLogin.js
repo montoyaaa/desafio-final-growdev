@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AuthService from '../Services/auth.service';
+
 export default function BtnLogin() {
     function UserLogin(props) {
         return (
@@ -18,7 +20,7 @@ export default function BtnLogin() {
     }
 
     function Greeting(props) {
-        const isLoggedIn = props.isLoggedIn;
+        const isLoggedIn = localStorage.getItem('user');
         if (isLoggedIn) {
             return <UserLogin />;
         }

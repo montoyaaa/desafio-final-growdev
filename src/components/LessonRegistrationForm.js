@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
 
+import api from '../Services/api';
+import authHeader from '../Services/auth-header';
+
 import SelectClassItem from './SelectClassItem';
 
+const classesData = [];
+
 export default function LessonRegistrationForm() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    if (!isMounted) {
+        api.get('/class-user', {
+            headers: authHeader(),
+        }).then((res) => {
+            setClasses(res.data);
+
+            setIsMounted(true);
+        });
+    }
+
+    const [classes, setClasses] = useState(classesData);
+
     const initialFormState = {
         id: null,
         name: '',
@@ -21,6 +40,12 @@ export default function LessonRegistrationForm() {
     };
 
     const addLesson = (newLesson) => {
+        api.post('/class', lesson, {
+            headers: authHeader(),
+        }).then((res) => {
+            setLesson([...lesson, res.data]);
+        });
+
         alert('Nova aula adicionada!');
     };
 
@@ -162,8 +187,10 @@ export default function LessonRegistrationForm() {
                     onChange={handleInputChange}
                     className="form-control"
                 >
-                    <option>Escolha a turma</option>
-                    <SelectClassItem />
+                    <option>Escolha o ID da turma</option>
+                    {classes.map((classes) => (
+                        <SelectClassItem key={classes.id} classes={classes} />
+                    ))}
                 </select>
             </div>
             <button
