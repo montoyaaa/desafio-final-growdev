@@ -2,6 +2,14 @@
   "root": "build/",
   "routes": {
     "/public": "index.html",
-    "/login": "index.html"
+    "/login": "index.html",
+    "/classes-manager": "index.html",
+    "/lessons": "index.html",
+    "/classes": "index.html",
+    "/student-manager": "index.html",
+    "/students": "index.html",
+    "/class-reg": "index.html",
+    "/student-reg": "index.html",
+    "/lesson-reg": "index.html"
   }
 }
