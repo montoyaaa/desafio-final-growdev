@@ -1,8 +1,8 @@
 web: yarn start
 npm: npm start
 build: yarn build
-build: npm run-script build
+buildNode: npm run-script build
 test: yarn teste
-test: npm teste
+testNode: npm teste
 eject: yarn eject
-eject: npm eject
+ejectNode: npm eject
