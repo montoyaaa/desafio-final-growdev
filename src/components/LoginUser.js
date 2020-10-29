@@ -27,15 +27,6 @@ export default function LoginUser() {
         });
     };
 
-    // function Welcome(props) {
-    //     const isLoggedIn = localStorage.getItem('user');
-
-    //     if (isLoggedIn) {
-    //         return <Redirect to="/" />;
-    //     }
-    //     return <Redirect to="/login" />;
-    // }
-
     let history = useHistory();
 
     return (
