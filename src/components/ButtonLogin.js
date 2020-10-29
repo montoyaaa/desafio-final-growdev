@@ -1,7 +1,5 @@
 import React from 'react';
 
-import AuthService from '../Services/auth.service';
-
 export default function BtnLogin() {
     function UserLogin(props) {
         return (
