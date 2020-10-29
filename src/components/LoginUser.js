@@ -23,7 +23,7 @@ export default function LoginUser() {
         const email = newUser.email;
         const password = newUser.password;
         AuthService.login(email, password).then((header) => {
-            history.push('/home');
+            history.push('/');
         });
     };
 

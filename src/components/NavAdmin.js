@@ -6,7 +6,7 @@ export default function NavAdmin() {
     function UserAdmin(props) {
         return (
             <nav className="">
-                <a href="/home" className="m-3 p-3">
+                <a href="/" className="m-3 p-3">
                     Home
                 </a>
                 <a href="/classes-manager" className="m-3 p-3">
@@ -22,7 +22,7 @@ export default function NavAdmin() {
     function UserExist(props) {
         return (
             <nav className="">
-                <a href="/home" className="m-3 p-3">
+                <a href="/" className="m-3 p-3">
                     Home
                 </a>
                 <a href="/lessons" className="m-3 p-3">
@@ -37,7 +37,7 @@ export default function NavAdmin() {
     function NoUser(props) {
         return (
             <nav className="">
-                <a href="/home" className="m-3 p-3">
+                <a href="/" className="m-3 p-3">
                     Home
                 </a>
                 <a href="/login" className="m-3 p-3">
