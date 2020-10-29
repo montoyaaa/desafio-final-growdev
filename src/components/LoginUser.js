@@ -23,7 +23,7 @@ export default function LoginUser() {
         const email = newUser.email;
         const password = newUser.password;
         AuthService.login(email, password).then((header) => {
-            history.push('/');
+            history.push('/home');
         });
     };
 
@@ -34,7 +34,6 @@ export default function LoginUser() {
             id="login-form"
             className="d-flex justify-content-center align-self-center"
         >
-            {/* <Welcome /> */}
             <form className="d-flex flex-column">
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>

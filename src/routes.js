@@ -18,7 +18,7 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact component={Main} />
+                <Route path="/home" exact component={Main} />
                 <Route path="/login" component={Login} />
                 <Route
                     path="/classes-manager"

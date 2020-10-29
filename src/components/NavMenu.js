@@ -8,7 +8,7 @@ import image from '../img/logo-dark.png';
 export default function NavMenu() {
     return (
         <header className="navbar-container d-flex align-items-center justify-content-between">
-            <a href="/">
+            <a href="/home">
                 <img
                     alt="logo Growdev"
                     id="logo-dark"
