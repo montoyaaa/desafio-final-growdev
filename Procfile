@@ -1,7 +1,7 @@
 web: yarn start
 npm: npm start
 build: yarn build
-build: npm build
+build: npm run-script build
 test: yarn teste
 test: npm teste
 eject: yarn eject
